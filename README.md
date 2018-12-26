@@ -4,4 +4,5 @@ L’objectif est d’entrainer un modele Spacy a reconnaitre deux types d’enti
 
 
 • https://www.ncbi.nlm.nih.gov/pubmed/
+
 • https://www.omim.org/search/
