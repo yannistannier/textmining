@@ -14,7 +14,7 @@ nlp = spacy.load("models/fs_normal/epoch_32")
 @app.route('/ner', methods=['POST'])
 def hello_world():
 	#print(request.json["text"])
-	doc = nlp(request.json["text"].decode("utf-8"))
+	doc = nlp(str(request.json["text"]))
 	gene = 0
 	disease = 0
 	for t in doc:
