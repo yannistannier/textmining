@@ -9,12 +9,12 @@ CORS(app)
 
 
 
-nlp = spacy.load("models/fs_normal/epoch_24")
+nlp = spacy.load("models/fs_normal/epoch_32")
 
 @app.route('/ner', methods=['POST'])
 def hello_world():
 	#print(request.json["text"])
-	doc = nlp(str(request.json["text"]))
+	doc = nlp(request.json["text"].decode("utf-8"))
 	gene = 0
 	disease = 0
 	for t in doc:
@@ -27,7 +27,10 @@ def hello_world():
 
 
 @app.route('/austim/<int:id_a>', methods=['GET'])
-def autism():
+def autism(id_a):
 	with open("test/sample_autism.json") as f:
-		ok = json.load(t)
-    	article = json.loads(ok[id_a])
+		ok = json.load(f)
+		article = json.loads(ok[id_a])
+	line=article["ab"]
+	doc = nlp(line.encode("utf-8").decode("utf-8"))
+	return "yo"
