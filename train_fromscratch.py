@@ -96,7 +96,7 @@ from pathlib import Path
 
 ### Training with NCBI
 
-TRAIN_DATA = json.load(open("train/normal_NCBI/train_set_0.json"))
+TRAIN_DATA = json.load(open("train/normal_NCBI/train_set_NCBI_only.json"))
 
 output="models/"
 n_iter=100
